@@ -22,6 +22,8 @@ function App() {
   const checked = (id) => dispatch({ type: "checked", id });
   const fetchTodos = () => API.getTodos(dispatch);
 
+const clear = () => dispatch({ type: "clear" });
+
 
   return (
     <div className="container">
@@ -37,12 +39,13 @@ function App() {
 
    
 
-      <ToDo state={state} toDoText={toDoText} add={add} fetchTodos={fetchTodos}  />
+      <ToDo state={state} toDoText={toDoText} add={add} fetchTodos={fetchTodos} clear={clear} />
 
       <AddToDo
         deleteToDo={deleteToDo}
         toDo={state.todos}
         checked={checked}
+        fetchTodos={fetchTodos}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 import "./ToDo.css";
 
-export const ToDo = ({ state, toDoText, add, fetchTodos }) => {
+export const ToDo = ({ state, toDoText, add, fetchTodos,clear }) => {
   return (
     <div className="todo-container">
       <input
@@ -11,6 +11,7 @@ export const ToDo = ({ state, toDoText, add, fetchTodos }) => {
       />
       <button onClick={add}>Գրանցիր</button>
      <button onClick={fetchTodos}>API-ից բերել</button>
+     <button onClick={clear}>X</button>
     </div>
   );
 };
